@@ -1,46 +1,40 @@
-
-name: CACAI
+name: itvlist
 
 on:
-  schedule:
-  - cron: '02 14,18,22,2,6,10 * * *'  #6>10>14>18>22>2&&&
+  
+  #schedule:
+    #- cron: '0 2,11 * * *' 
   workflow_dispatch:
-    分支:
-      - main
-      
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 检出代码
         uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: 设置 Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x
-      - name: Install numpy          
-        run: pip install 'numpy==1.26.4'
-      - name: Install dependencies
-        run: pip install selenium requests futures eventlet
-      - name: Install dependencies
-        run: pip install opencv-python requests 
-      - name: Install dependencies
-        run: pip install Beautifulsoup4 requests 
-      - name: Install dependencies
-        run: pip install translate requests 
-        
-      - name: Run iptv
+          python-version: 3.11
+
+      - name: 安装依赖项
+         # pip install selenium requests futures eventlet opencv-python paddlepaddle paddleocr pillow
+        run: pip install --upgrade numpy
+             pip install requests opencv-python paddlepaddle paddleocr pillow
+      #- name: 运行 itv_all1080并筛选
+       # run: python ${{ github.workspace }}/itv_all1080.py
+
+      - name: 运行 itv_all
         run: python ${{ github.workspace }}/zhejiang.py
-         
-      - name: Commit results
+     
+      - name: 提交更改
         run: |
-            git config --local user.email "actions@github.com"
-            git config --local user.name "GitHub Action"
-            if [ -n "$(git status --porcelain)" ]; then
-            git commit -am "Automatic update"
-            git push
-            else
-              echo "No changes detected, skipping commit."
-            fi
+          git config --local user.email "chenhua.xu@qq.com"
+          git config --local user.name "wokaotianshi123"
+          git add .
+          git commit *.txt -m "Add generated file"
+          git commit *.m3u -m "Add generated file"
+          #git pull --rebase
+          git push -f
