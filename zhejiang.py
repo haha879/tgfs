@@ -4,8 +4,8 @@ import cv2  # 导入OpenCV库
 
 # 定义fofa链接
 fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgcmVnaW9uPSJaaGVqaWFuZyIgJiYgb3JnPSJDaGluYW5ldCIg'
-#fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0iaGFuZ3pob3UiICYmIG9yZz0iQ2hpbmFuZXQi' #杭州
-#fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0ibmluZ2JvIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D' #宁波
+fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0iaGFuZ3pob3UiICYmIG9yZz0iQ2hpbmFuZXQi' #杭州
+fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0ibmluZ2JvIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D' #宁波
 # fofa_url = 'http://tonkiang.us/hoteliptv.php?page=1&pv=%E9%87%8D%E5%BA%86%E8%81%94%E9%80%9A'
 
 # 尝试从fofa链接提取IP地址和端口号，并去除重复项
@@ -90,7 +90,7 @@ if unique_ips_ports:
         print(f"找到可访问的视频流服务: {valid_ip}")
         # 定义需要更新的文件列表
         files_to_update = [
-            {'url': 'https://raw.githubusercontent.com/haha879/tgfs/main/udp/浙江电信.txt', 'filename': 'udp/浙江电信.txt'}
+            {'url': 'https://raw.githubusercontent.com/haha879/tgfs/main/udp/zhejiang.txt', 'filename': 'udp/zhejiang.txt'}
         ]
 
         # 更新文件中的IP地址和端口号
