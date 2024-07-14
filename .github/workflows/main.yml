@@ -1,57 +1,46 @@
 
-name: genngxinzubo
+name: CACAI
 
 on:
-  # push:
   schedule:
-    - cron: '20 23 * * *'
+  - cron: '02 14,18,22,2,6,10 * * *'  #6>10>14>18>22>2&&&
   workflow_dispatch:
-
+    分支:
+      - main
+      
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          retain_days: 2
-          keep_minimum_runs: 6 
-
-      - name: Set up Python 3.8
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8  # 指定Python版本为3.8
-
-      - name: Install setuptools
-        run: |
-          pip install --upgrade pip  # 升级pip
-          pip install setuptools    # 安装setuptools
-
+          python-version: 3.x
+      - name: Install numpy          
+        run: pip install 'numpy==1.26.4'
       - name: Install dependencies
-        run: |
-          pip install opencv-python  # 根据需要安装opencv-python
-          pip install requests      # 安装requests库
-
-      - name: Run gengxinzhejiangip
+        run: pip install selenium requests futures eventlet
+      - name: Install dependencies
+        run: pip install opencv-python requests 
+      - name: Install dependencies
+        run: pip install Beautifulsoup4 requests 
+      - name: Install dependencies
+        run: pip install translate requests 
+        
+      - name: Run iptv
         run: python ${{ github.workspace }}/zhejiang.py
-
-      # 根据需要取消注释以下行
-      # - name: Run gengxinhunanip
-      #   run: python ${{ github.workspace }}/gengxinhunanip.py
-
+         
       - name: Commit results
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Action"
-          if [ -n "$(git status --porcelain)" ]; then
-            git add *.txt *
-            git commit -m "Automatic update"
+            git config --local user.email "actions@github.com"
+            git config --local user.name "GitHub Action"
+            if [ -n "$(git status --porcelain)" ]; then
+            git commit -am "Automatic update"
             git push
-          else
-            echo "No changes detected, skipping commit."
-          fi
+            else
+              echo "No changes detected, skipping commit."
+            fi
