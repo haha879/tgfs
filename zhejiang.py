@@ -3,9 +3,11 @@ import re
 import cv2  # 导入OpenCV库
 
 # 定义fofa链接
-fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgcmVnaW9uPSJaaGVqaWFuZyIgJiYgb3JnPSJDaGluYW5ldCIg'
-fofa_url_hz = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0iaGFuZ3pob3UiICYmIG9yZz0iQ2hpbmFuZXQi' #杭州
-fofa_url_nb = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0ibmluZ2JvIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D' #宁波
+urls = [
+  "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgcmVnaW9uPSJaaGVqaWFuZyIgJiYgb3JnPSJDaGluYW5ldCIg",#浙江
+  "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0iaGFuZ3pob3UiICYmIG9yZz0iQ2hpbmFuZXQi",#杭州
+  "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjb3VudHJ5PSJDTiIgJiYgY2l0eT0ibmluZ2JvIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D" #宁波
+]
 # fofa_url = 'http://tonkiang.us/hoteliptv.php?page=1&pv=%E9%87%8D%E5%BA%86%E8%81%94%E9%80%9A'
 
 # 尝试从fofa链接提取IP地址和端口号，并去除重复项
