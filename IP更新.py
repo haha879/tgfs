@@ -8,10 +8,11 @@ fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjaXR5PSJoYW5nemhvdSI
 fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjaXR5PSJuaW5nYm8i'   #宁波市
 fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjaXR5PSJsaXNodWki'   #丽水
 fofa_url = 'https://fofa.info/result?qbase64=InVkcHh5IiAmJiBjaXR5PSJ0YWl6aG91Ig%3D%3D'   #泰州
+
 # 尝试从fofa链接提取IP地址和端口号，并去除重复项
 def extract_unique_ip_ports(fofa_url):
     try:
-        response = requests.get(fofa_url, timeout=13)
+        response = requests.get(fofa_url)
         html_content = response.text
         # 使用正则表达式匹配IP地址和端口号
         ips_ports = re.findall(r'(\d+\.\d+\.\d+\.\d+:\d+)', html_content)
@@ -90,8 +91,8 @@ if unique_ips_ports:
         print(f"找到可访问的视频流服务: {valid_ip}")
         # 定义需要更新的文件列表
         files_to_update = [
-            {'url': 'https://raw.githubusercontent.com/haha879/tgfs/main/浙江电信.txt', 'filename': '浙江电信.txt'} #,
-            #{'url': 'https://raw.githubusercontent.com/frxz751113/zubotv/main/udp/广东电信.m3u', 'filename': '广东电信.m3u'}
+            {'url': 'https://raw.githubusercontent.com/haha879/tgfs/main/udp/浙江电信.txt', 'filename': '浙江电信.txt'},
+           # {'url': 'https://gitjs.wokaotianshi123.cloudns.org/https://raw.githubusercontent.com/wokaotianshi123/zubotv/main/chongqing/chongqingzubo.m3u', 'filename': 'chongqingzubo.m3u'}
         ]
 
         # 更新文件中的IP地址和端口号
@@ -99,4 +100,4 @@ if unique_ips_ports:
     else:
         print("没有找到可访问的视频流服务。")
 else:
-    print("没有提取到IP地址和端口号。")
+    print("没有提取到IP地址和端口号。") 
