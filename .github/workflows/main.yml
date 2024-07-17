@@ -2,7 +2,7 @@ name: itvlist
 
 on:
   schedule:
-    - cron: '0 4,10,22 * * *'
+    - cron: '0 10,22 * * *'
   push:
     branches:
       - main
@@ -24,7 +24,7 @@ jobs:
         run: pip install selenium requests futures eventlet
 
       - name: Run a
-        run: python ${{ github.workspace }}/hebei.py
+        run: python ${{ github.workspace }}/zhejiang.py
          
       - name: 提交更改
         run: |
