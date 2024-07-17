@@ -1,40 +1,35 @@
 name: itvlist
 
 on:
-  
-  #schedule:
-    #- cron: '0 2,11 * * *' 
-  workflow_dispatch:
+  schedule:
+    - cron: '0 4,10,22 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 检出代码
+      - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: 设置 Python
+    
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.11
+          python-version: 3.x
 
-      - name: 安装依赖项
-         # pip install selenium requests futures eventlet opencv-python paddlepaddle paddleocr pillow
-        run: pip install --upgrade numpy
-             pip install selenium
-             pip install eventlet
-             pip install requests opencv-python paddlepaddle paddleocr pillow
-      #- name: 运行 itv_all1080并筛选
-       # run: python ${{ github.workspace }}/itv_all1080.py
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
 
-      - name: 运行 itv_all
-        run: python ${{ github.workspace }}/zhejiang.py
-     
+      - name: Run a
+        run: python ${{ github.workspace }}/hebei.py
+         
       - name: 提交更改
         run: |
-          git config --local user.email "chenhua.xu@qq.com"
-          git config --local user.name "wokaotianshi123"
+          git config --local user.email "dwc1119@163.com"
+          git config --local user.name "dwc1119"
           git add .
           git commit *.txt -m "Add generated file"
           git commit *.m3u -m "Add generated file"
