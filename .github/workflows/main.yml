@@ -23,8 +23,11 @@ jobs:
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
 
-      - name: Run a
+      - name: Run shaanxi
         run: python ${{ github.workspace }}/shaanxi.py
+
+      - name: Run zhejiang
+        run: python ${{ github.workspace }}/zhejiang.py
          
       - name: 提交更改
         run: |
