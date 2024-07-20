@@ -140,7 +140,7 @@ for url in urls:
     except:
         continue
 channels = []
-with open("zhejiangiptv.txt", 'r', encoding='utf-8') as file:
+with open("shaanxiiptv.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
         #print(line)
@@ -154,7 +154,7 @@ with open("zhejiangiptv.txt", 'r', encoding='utf-8') as file:
 
 
 result_counter = 8  # 每个频道需要的个数
-with open("zhejiangitvlist.txt", 'w', encoding='utf-8') as file:
+with open("shaanxiitvlist.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('央视(电信),#genre#\n')
     for channel in channels:
@@ -213,7 +213,7 @@ with open("zhejiangitvlist.txt", 'w', encoding='utf-8') as file:
                 file.write(channel + "\n")
                 channel_counters[channel_name] = 1
 
-with open("zhejiangitvlist.m3u", 'a', encoding='utf-8') as file:
+with open("shaanxiitvlist.m3u", 'a', encoding='utf-8') as file:
     channel_counters = {}
     file.write('#EXTM3U\n')
     for channel in channels:
