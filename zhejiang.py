@@ -201,7 +201,7 @@ with open("zhejiangitvlist.txt", 'w', encoding='utf-8') as file:
     file.write('其他(电信),#genre#\n')
     for channel in channels:
         channel_name,channel_url = channel.split(",")
-        if 'CCTV' not in channel_name and '卫视' not in channel_name and '地方' not in channel_name:
+        if 'CCTV' not in channel_name and '卫视' not in channel_name and '浙江' not in channel_name and '杭州' not in channel_name and '宁波' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -249,7 +249,7 @@ with open("zhejiangitvlist.m3u", 'a', encoding='utf-8') as file:
     #file.write('其他频道,#genre#\n')
     for channel in channels:
         channel_name,channel_url = channel.split(",")
-        if 'CCTV' not in channel_name and '卫视' not in channel_name and '地方' not in channel_name:
+        if 'CCTV' not in channel_name and '卫视' not in channel_name and '浙江' not in channel_name  and '杭州' not in channel_name and '宁波' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
