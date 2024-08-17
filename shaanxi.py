@@ -13,9 +13,9 @@ eventlet.monkey_patch()
 
 ###urls城市根据自己所处的地理位置修改
 urls = [
+    "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiByZWdpb249IlNoYWFueGki",#陕西
     "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiBjaXR5PSJYaSdhbiI%3D",#西安
     "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiBjaXR5PSJiYW9qaSI%3D",#宝鸡
-    "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiByZWdpb249IlNoYWFueGki",#陕西
     "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiBjaXR5PSJhbmthbmci",#安康
     "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiBjaXR5PSJ3ZWluYW4i",#渭南
     "https://fofa.info/result?qbase64=InVkcHh5IiAmJiBvcmc9IkNoaW5hbmV0IiAmJiByZWdpb249IlNoYWFueGkiICYmIGNpdHk9Inl1bGluIg%3D%3D"#榆林
