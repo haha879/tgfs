@@ -159,7 +159,7 @@ with open("shaanxiitvlist.txt", 'w', encoding='utf-8') as file:
     file.write('央视(电信),#genre#\n')
     for channel in channels:
         channel_name,channel_url = channel.split(",")
-        if 'CCTV' in channel_name or 'CHC' in channel_name::
+        if 'CCTV' in channel_name or 'CHC' in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
