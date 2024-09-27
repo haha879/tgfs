@@ -42,27 +42,8 @@ jobs:
           pip install opencv-python  # 根据需要安装opencv-python
           pip install requests      # 安装requests库
       - name: Run a
-        run: python ${{ github.workspace }}/a.py
+        run: python ${{ github.workspace }}/zhejiang.py
      
-      #- name: Run d
-        #run: python ${{ github.workspace }}/d.py
-
-     # - name: run itv2
-       # run: python ${{ github.workspace }}/itv2.py
-
-      #- name: Run itv_add
-       # run: python ${{ github.workspace }}/itv_add.py        
-      
-      #- name: Run itvjoin
-        #run: python ${{ github.workspace }}/itvjoin.py
-
-
-      #- name: Run b
-        #run: python ${{ github.workspace }}/b.py
-
-      - name: Run c
-        run: python ${{ github.workspace }}/zhejiang.py        
-        
         
       - name: 提交更改
         run: |
