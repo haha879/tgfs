@@ -41,6 +41,7 @@ jobs:
         run: |
           pip install opencv-python  # 根据需要安装opencv-python
           pip install requests      # 安装requests库
+          pip install selenium
       - name: Run a
         run: python ${{ github.workspace }}/zhejiang.py
      
